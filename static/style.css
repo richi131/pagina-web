@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+    background: linear-gradient(-45deg, #2c3e50, #3498db, #e74c3c, #2ecc71);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Estilos de los botones */
+button {
+    background-color: #eee;
+    border: none;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 1rem;
+    color: rgb(116, 85, 85);
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    margin: 0;
+}
+
+/* Efecto hover en los botones */
+button:hover:not(:disabled) {
+    background: lightcoral;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+    transform: scale(1.05);
+}
+
+/* Efecto al presionar los botones */
+button:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+
+/* Estilo para botones deshabilitados */
+button:disabled {
+    cursor: auto;
+    color: grey;
+    opacity: 0.7;
+}
+
+/* Añadir letras antes de cada opción */
+button::before {
+    content: attr(class);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+}
